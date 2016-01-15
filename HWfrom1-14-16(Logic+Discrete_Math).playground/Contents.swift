@@ -11,7 +11,16 @@ Question 1: https://www.hackerrank.com/challenges/minimum-draws
 
 Copy and paste your code:
 
+let testCases = Int(readLine(stripNewline: true)!)!
+
+for var x = 0; x < testCases; x++ {
+let n = Int(readLine(stripNewline: true)!)!
+print(n + 1)
+}
+
 What is the big O runtime of your code?:
+
+O(n)
 
 Question 2: https://www.hackerrank.com/challenges/handshake
 
