@@ -14,8 +14,8 @@ Copy and paste your code:
 let testCases = Int(readLine(stripNewline: true)!)!
 
 for var x = 0; x < testCases; x++ {
-let n = Int(readLine(stripNewline: true)!)!
-print(n + 1)
+    let n = Int(readLine(stripNewline: true)!)!
+    print(n + 1)
 }
 
 What is the big O runtime of your code?:
@@ -26,7 +26,18 @@ Question 2: https://www.hackerrank.com/challenges/handshake
 
 Copy and paste your code:
 
+let testCases = Int(readLine(stripNewline: true)!)!
+
+let testCases = Int(readLine(stripNewline: true)!)!
+
+for var x = 0; x < testCases; x++ {
+    let n = Int(readLine(stripNewline: true)!)!
+    print((n)*(n-1)/2)
+}
+
 What is the big O runtime of your code?:
+
+O(n)
 
 Question 3: https://www.hackerrank.com/challenges/connecting-towns
 
@@ -35,4 +46,3 @@ Copy and paste your code:
 What is the big O runtime of your code?:
 
 */
-
