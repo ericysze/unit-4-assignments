@@ -66,10 +66,11 @@ for i in 0..<routeArr.count {
 
 let routeInt = Int(routeArr[i])!
 output *= routeInt
+output %= 1234567
 }
 
 //    var output = routeArray.reduce(1, combine: *)
-print(output % 1234567)
+print(output)
 // explicity set output back to one or it will multiply next output with previous output
 output = 1
 }
