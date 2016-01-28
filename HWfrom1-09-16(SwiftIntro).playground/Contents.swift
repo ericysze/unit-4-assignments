@@ -26,9 +26,4 @@ L2 = [9, 20 , 5]
 
 // 1)
 
-var n : Int
-var x : Int
 
-for x in n - 1 {
-    
-}
