@@ -20,16 +20,19 @@ func findFile(name: String, atPath: String) -> String {
         if exists && Bool(isDir) {
             
             // YOUR CODE HERE
-            findFile(name, atPath: fullPath)
-            print("DIR: " + fileOrDir)
+            let result = findFile(name, atPath: fullPath)
+            if result != "NOT FOUND" {
+                return result
+            }
+//            print("DIR: " + fileOrDir)
         } else if exists {
             // YOUR CODE HERE
             if (fileOrDir == name){
-                print("FILE: " + fileOrDir)
-                print("File is at: \(fullPath)")
+//                print("FILE: " + fileOrDir)
+//                print("File is at: \(fullPath)")
                 return fullPath
             }
-            print("FILE: " + fileOrDir)
+//            print("FILE: " + fileOrDir)
         } else {
             print("NEITHER: " + fileOrDir)
         }

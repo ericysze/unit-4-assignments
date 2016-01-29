@@ -41,6 +41,7 @@ fib(4)
 
 //Question 2
 
+import Foundation
 
 var stepNum = 0
 func tryStep() -> Int {
