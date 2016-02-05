@@ -17,7 +17,7 @@ func intHash(input: Int) -> String {
 intHash(1)
 intHash(2)
 intHash(5)
-intHash(10) // 10/7 = 3
+intHash(10) // 10%7 = 3
 intHash(3)  // collision? different input int results in same output
 intHash(3) // input of 3 still results in same output
 intHash(3)
@@ -60,8 +60,41 @@ moderate("Hello FANDROID")
 
 //3)
 
-protocol PhoneBook {
-    mutating func addEntry(name: String, phoneNumber: String)
-    mutating func removeEntry(name: String)
-    mutating func importFrom(
+protocol PhoneBookProtocol {
+    mutating func addPerson(name: String, phoneNumber: String)
+    mutating func removePerson(name: String)
+    mutating func importFrom(oldPhonebook: [(String, String)])
+    func findPerson(name: String) -> String?
+    // Return phone #
 }
+
+class PhoneBook: PhoneBookProtocol {
+    var storage: [String : String] = [:]
+    
+    func addPerson(name: String, phoneNumber: String) {
+    storage[name] = phoneNumber
+    }
+    
+    func removePerson(name: String) {
+        storage.removeValueForKey(name)
+    }
+    
+    func findPerson(name: String) -> String? {
+        return storage[name]
+    }
+    
+    func importFrom(oldPhonebook: [(String, String)]) {
+        for entry in oldPhonebook {
+            addPerson(entry.0, phoneNumber: entry.1)
+        }
+    }
+}
+
+let oldData = [("Caleb", "501-555-1234"), ("Mike", "212-555-4321"), ("Jenny", "345-867-5309")]
+
+let phoneBook = PhoneBook()
+phoneBook.importFrom(oldData)
+
+phoneBook.findPerson("Jenny")
+phoneBook.findPerson("Eric")
+phoneBook.findPerson("Caleb")
